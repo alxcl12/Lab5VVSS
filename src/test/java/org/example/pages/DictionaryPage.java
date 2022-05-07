@@ -12,13 +12,13 @@ import net.thucydides.core.pages.PageObject;
 
 import java.util.List;
 
-@DefaultUrl("http://en.wiktionary.org/wiki/Wiktionary")
+@DefaultUrl("http://automationpractice.com/index.php")
 public class DictionaryPage extends PageObject {
 
-    @FindBy(name="search")
+    @FindBy(name="search_query")
     private WebElementFacade searchTerms;
 
-    @FindBy(name="go")
+    @FindBy(name="submit_search")
     private WebElementFacade lookupButton;
 
     public void enter_keywords(String keyword) {
@@ -30,8 +30,8 @@ public class DictionaryPage extends PageObject {
     }
 
     public List<String> getDefinitions() {
-        WebElementFacade definitionList = find(By.tagName("ol"));
-        return definitionList.findElements(By.tagName("li")).stream()
+        WebElementFacade definitionList = find(By.className("product_list grid row"));
+        return definitionList.findElements(By.className("product-name")).stream()
                 .map( element -> element.getText() )
                 .collect(Collectors.toList());
     }
