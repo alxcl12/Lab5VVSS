@@ -1,0 +1,18 @@
+-------------------------------------------------------------------------------
+Test set: org.example.features.search.SearchByKeywordStory
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 17.203 s <<< FAILURE! - in org.example.features.search.SearchByKeywordStory
+sequence_test(org.example.features.search.SearchByKeywordStory)  Time elapsed: 10.345 s  <<< ERROR!
+org.openqa.selenium.ElementNotInteractableException: 
+element not interactable
+  (Session info: chrome=101.0.4951.54)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'PICIU', ip: '192.168.1.187', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 101.0.4951.54, chrome: {chromedriverVersion: 101.0.4951.41 (93c720db8323..., userDataDir: C:\Users\junki\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:59058}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: d35aa89881409f815a85699e0f469bb3
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'PICIU', ip: '192.168.1.187', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.7'
+Driver info: driver.version: unknown
+	at org.example.features.search.SearchByKeywordStory.sequence_test(SearchByKeywordStory.java:53)
+

@@ -38,7 +38,10 @@ public class ShopPage extends PageObject {
 
     public void noProduct() {
         WebElementFacade definitionList = find(By.className("heading-counter"));
-
-        System.out.println(definitionList.getText());
         assert (definitionList.getText().contains("0 results"));
-}}
+}
+    public void clicksOn() {
+        WebElementFacade definitionList = find(By.className("product-name"));
+        definitionList.click();
+    }
+}

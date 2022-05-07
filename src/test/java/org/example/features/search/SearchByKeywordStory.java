@@ -9,6 +9,7 @@ import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
 import org.example.steps.serenity.EndUserSteps;
+import org.springframework.core.annotation.Order;
 
 @RunWith(SerenityRunner.class)
 public class SearchByKeywordStory {
@@ -35,7 +36,7 @@ public class SearchByKeywordStory {
 //        anna.should_see_definition("An edible fruit produced by the pear tree, similar to an apple but elongated towards the stem.");
 //    }
 
-    @Test
+    /*@Test
     public void search_blouse(){
         anna.is_the_home_page();
         anna.looks_for("blouse");
@@ -44,5 +45,12 @@ public class SearchByKeywordStory {
         anna.is_the_home_page();
         anna.looks_for("mazare");
         anna.should_not_see_products();
+    }*/
+    @Test
+    public void sequence_test(){
+        anna.is_the_home_page();
+        anna.looks_for("blouse");
+        anna.clicks_on_product();
+
     }
 } 
