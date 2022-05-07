@@ -38,10 +38,29 @@ public class ShopPage extends PageObject {
 
     public void noProduct() {
         WebElementFacade definitionList = find(By.className("heading-counter"));
+
+        System.out.println(definitionList.getText());
         assert (definitionList.getText().contains("0 results"));
-}
+    }
+
     public void clicksOn() {
-        WebElementFacade definitionList = find(By.className("product-name"));
+        WebElementFacade definitionList = find(By.className("right-block"));
+        definitionList.findElement(By.className("product-name")).click();
+    }
+
+    public void cartOperations() {
+        WebElementFacade definitionList = find(By.name("Submit"));
         definitionList.click();
+
+        WebElementFacade div = find(By.className("button-container"));
+        div.findElement(By.tagName("a")).click();
+
+        WebElementFacade tst = find(By.className("icon-minus"));
+        tst.click();
+    }
+
+    public void go_checkout(){
+        WebElementFacade cart = find(By.className("cart_block block exclusive"));
+        cart.click();
     }
 }

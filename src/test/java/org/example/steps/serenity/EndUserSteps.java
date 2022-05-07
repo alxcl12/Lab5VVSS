@@ -27,6 +27,11 @@ public class EndUserSteps {
     }
 
     @Step
+    public void cart_operation(){
+        shopPage.cartOperations();
+    }
+
+    @Step
     public void should_see_product(String definition) {
         assertThat(shopPage.getProduct(), hasItem(containsString(definition)));
     }
