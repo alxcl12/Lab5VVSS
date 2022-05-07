@@ -1,8 +1,7 @@
 package org.example.steps.serenity;
 
-import org.example.pages.DictionaryPage;
+import org.example.pages.ShopPage;
 import net.thucydides.core.annotations.Step;
-import net.thucydides.core.steps.ScenarioSteps;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.containsString;
@@ -10,26 +9,31 @@ import static org.hamcrest.Matchers.hasItem;
 
 public class EndUserSteps {
 
-    DictionaryPage dictionaryPage;
+    ShopPage shopPage;
 
     @Step
     public void enters(String keyword) {
-        dictionaryPage.enter_keywords(keyword);
+        shopPage.enter_keywords(keyword);
     }
 
     @Step
     public void starts_search() {
-        dictionaryPage.lookup_terms();
+        shopPage.lookup_terms();
     }
 
     @Step
-    public void should_see_definition(String definition) {
-        assertThat(dictionaryPage.getDefinitions(), hasItem(containsString(definition)));
+    public void should_see_product(String definition) {
+        assertThat(shopPage.getProduct(), hasItem(containsString(definition)));
+    }
+
+    @Step
+    public void should_not_see_products() {
+        shopPage.noProduct();
     }
 
     @Step
     public void is_the_home_page() {
-        dictionaryPage.open();
+        shopPage.open();
     }
 
     @Step

@@ -1,9 +1,7 @@
 package org.example.features.search;
 
 import net.serenitybdd.junit.runners.SerenityRunner;
-import net.thucydides.core.annotations.Issue;
 import net.thucydides.core.annotations.Managed;
-import net.thucydides.core.annotations.Pending;
 import net.thucydides.core.annotations.Steps;
 
 import org.junit.Test;
@@ -41,6 +39,10 @@ public class SearchByKeywordStory {
     public void search_blouse(){
         anna.is_the_home_page();
         anna.looks_for("blouse");
-        anna.should_see_definition("Blouse");
+        anna.should_see_product("Blouse");
+
+        anna.is_the_home_page();
+        anna.looks_for("mazare");
+        anna.should_not_see_products();
     }
 } 

@@ -13,7 +13,7 @@ import net.thucydides.core.pages.PageObject;
 import java.util.List;
 
 @DefaultUrl("http://automationpractice.com/index.php")
-public class DictionaryPage extends PageObject {
+public class ShopPage extends PageObject {
 
     @FindBy(name="search_query")
     private WebElementFacade searchTerms;
@@ -29,10 +29,16 @@ public class DictionaryPage extends PageObject {
         lookupButton.click();
     }
 
-    public List<String> getDefinitions() {
-        WebElementFacade definitionList = find(By.className("product_list grid row"));
+    public List<String> getProduct() {
+        WebElementFacade definitionList = find(By.className("right-block"));
         return definitionList.findElements(By.className("product-name")).stream()
                 .map( element -> element.getText() )
                 .collect(Collectors.toList());
     }
-}
+
+    public void noProduct() {
+        WebElementFacade definitionList = find(By.className("heading-counter"));
+
+        System.out.println(definitionList.getText());
+        assert (definitionList.getText().contains("0 results"));
+}}
